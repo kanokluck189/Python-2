@@ -172,7 +172,7 @@ def quiz_mode(converter: MalakorConverter, rounds: int = 5):
 # =========================
 def main():
     converter = MalakorConverter()
-    print("\n⚡🌴 MALAKOR REQUIEM 🌴⚡")
+    print("\n⚡ MALAKOR REQUIEM ⚡")
 
     while True:
         print("\nSelect Mode:")
