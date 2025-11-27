@@ -6,7 +6,7 @@ from functools import wraps
 # =========================
 # Decorator for safe conversion
 # =========================
-def safe_conversion(func):
+def safe_conversion(func: callable) -> callable:
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
@@ -119,28 +119,28 @@ def load_total_score() -> int:
             return data.get("total_score", 0)
     return 0
 
-def save_total_score(score: int):
+def save_total_score(score: int) -> None:
     with open(SCORE_FILE, "w") as f:
         json.dump({"total_score": score}, f)
 
 def get_stand_level(total_score: int) -> str:
     if total_score < 500:
-        return "I - Star Platinum"
+        return "I - Star Papaya "
     elif total_score < 5000:
-        return "II - The World"
+        return "II - The Papaya World"
     elif total_score < 10000:
-        return "III - Killer Queen"
+        return "III - Killer Papaya Queen"
     elif total_score < 150000:
-        return "IV - King Crimson"
+        return "IV - King Papaya Crimson"
     elif total_score < 300000:
-        return "V - Gold Experience"
+        return "V - Papaya Experience"
     else:
-        return "VI - Made in Heaven"
+        return "VI - Papaya Made in Heaven"
 
 # =========================
 # Quiz Mode
 # =========================
-def quiz_mode(converter: MalakorConverter, rounds: int = 5):
+def quiz_mode(converter: MalakorConverter, rounds: int = 5) -> None:
     total_score = load_total_score()
     print(f"\nWelcome to Malakor Requiem Quiz Mode! Stand Power: {total_score}")
     score = 0
@@ -170,7 +170,7 @@ def quiz_mode(converter: MalakorConverter, rounds: int = 5):
 # =========================
 # Main Program
 # =========================
-def main():
+def main() -> None:
     converter = MalakorConverter()
     print("\n⚡ MALAKOR REQUIEM ⚡")
 
