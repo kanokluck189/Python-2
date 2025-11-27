@@ -142,7 +142,7 @@ def get_stand_level(total_score: int) -> str:
 # =========================
 def quiz_mode(converter: MalakorConverter, rounds: int = 5):
     total_score = load_total_score()
-    print(f"\n🌴 Welcome to Malakor Requiem Quiz Mode! Total Score: {total_score}")
+    print(f"\nWelcome to Malakor Requiem Quiz Mode! Stand Power: {total_score}")
     score = 0
 
     if not WORD_BANK:
