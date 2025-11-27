@@ -164,7 +164,7 @@ def quiz_mode(converter: MalakorConverter, rounds: int = 5):
     save_total_score(total_score)
 
     print(f"\n🏆 Round Score: {score}")
-    print(f"💥 Total Score: {total_score}")
+    print(f"💥 Stand Power: {total_score}")
     print(f"⚡ Your Stand Level: {get_stand_level(total_score)}")
 
 # =========================
